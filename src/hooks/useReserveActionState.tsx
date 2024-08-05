@@ -117,9 +117,6 @@ export const useReserveActionState = ({
           <>
             {currentNetworkConfig.isTestnet ? (
               <Warning sx={{ mb: 0 }} severity="info" icon={false}>
-                <Trans>
-                  Your {networkName} wallet is empty.
-                </Trans>{' '}
                 {currentMarketData.addresses.FAUCET ? (
                   <Button
                     variant="text"
@@ -146,7 +143,7 @@ export const useReserveActionState = ({
                     disableRipple
                   >
                     <Typography variant="caption">
-                      <Trans> Get free test {reserve.name}</Trans>
+                      <Trans> Get free tokens from Faucet</Trans>
                     </Typography>
                   </Button>
                 )}
