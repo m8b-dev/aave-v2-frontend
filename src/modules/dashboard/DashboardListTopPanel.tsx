@@ -47,8 +47,8 @@ export const DashboardListTopPanel = ({
         label={<Trans>Show assets with 0 balance</Trans>}
       />
 
-      {(STAGING_ENV || ENABLE_TESTNET) && <FaucetButton />}
-      {!ENABLE_TESTNET && <BridgeButton bridge={bridge} />}
+      {/*{(STAGING_ENV || ENABLE_TESTNET) && <FaucetButton />}*/}
+      {/*{!ENABLE_TESTNET && <BridgeButton bridge={bridge} />}*/}
     </Box>
   );
 };

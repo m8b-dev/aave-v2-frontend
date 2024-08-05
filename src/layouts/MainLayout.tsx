@@ -13,19 +13,19 @@ export function MainLayout({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <TopBarNotify
-        learnMoreLink="/markets/?marketName=proto_lido_v3"
-        buttonText="View Market"
-        notifyText="Aave Governance has deployed a new Lido market on Ethereum V3"
-        bannerVersion={APP_BANNER_VERSION}
-        icon={'/icons/tokens/ldo.svg'}
-      />
+      {/*<TopBarNotify*/}
+      {/*  learnMoreLink="/markets/?marketName=proto_lido_v3"*/}
+      {/*  buttonText="View Market"*/}
+      {/*  notifyText="Aave Governance has deployed a new Lido market on Ethereum V3"*/}
+      {/*  bannerVersion={APP_BANNER_VERSION}*/}
+      {/*  icon={'/icons/tokens/ldo.svg'}*/}
+      {/*/>*/}
       <AppHeader />
       <Box component="main" sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
         {children}
       </Box>
 
-      <AppFooter />
+      {/*<AppFooter />*/}
       <FeedbackModal />
       {FORK_ENABLED ? null : <AnalyticsConsent />}
     </>

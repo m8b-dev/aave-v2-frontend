@@ -10,7 +10,11 @@ interface TestNetModeSwitcherProps {
 
 export const TestNetModeSwitcher = ({ component = ListItem }: TestNetModeSwitcherProps) => {
   const testnetsEnabledId = 'testnetsEnabled';
-  const testnetsEnabledLocalstorage = localStorage.getItem(testnetsEnabledId) === 'true' || false;
+  if (!(localStorage.getItem(testnetsEnabledId) === 'true')) {
+    localStorage.setItem(testnetsEnabledId, 'true');
+    window.location.reload();
+  }
+  const testnetsEnabledLocalstorage = true;
   const [testnetsEnabled, setTestnetsMode] = useState(testnetsEnabledLocalstorage);
   const trackEvent = useRootStore((store) => store.trackEvent);
 
@@ -24,8 +28,9 @@ export const TestNetModeSwitcher = ({ component = ListItem }: TestNetModeSwitche
 
   return (
     <Box
+      disabled
       component={component}
-      onClick={toggleTestnetsEnabled}
+      // onClick={toggleTestnetsEnabled}
       sx={{
         cursor: 'pointer',
         color: { xs: '#F1F1F3', md: 'text.primary' },
@@ -41,7 +46,8 @@ export const TestNetModeSwitcher = ({ component = ListItem }: TestNetModeSwitche
         control={
           <Switch
             disableRipple
-            onClick={() => trackEvent(SETTINGS.TESTNET_MODE)}
+            disabled
+            // onClick={() => trackEvent(SETTINGS.TESTNET_MODE)}
             checked={testnetsEnabled}
             sx={{ '.MuiSwitch-track': { bgcolor: { xs: '#FFFFFF1F', md: 'primary.light' } } }}
           />

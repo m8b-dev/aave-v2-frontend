@@ -13,22 +13,74 @@ import { WalletEmptyInfo } from 'src/modules/dashboard/lists/SupplyAssetsList/Wa
 import { useRootStore } from 'src/store/root';
 import { assetCanBeBorrowedByUser } from 'src/utils/getMaxAmountAvailableToBorrow';
 import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
+import { useWeb3React } from '@web3-react/core';
+import { ethers } from 'ethers';
 
 import { useModalContext } from './useModal';
-
+const contractABI = [
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "mint",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "decimals",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  }
+];
 interface ReserveActionStateProps {
   balance: string;
   maxAmountToSupply: string;
   maxAmountToBorrow: string;
   reserve: ComputedReserveData;
 }
+const mintTokens = async (library: ethers.providers.Web3Provider, underlyingAsset: string) => {
+  try {
+    const signer = library.getSigner();
+    const contract = new ethers.Contract(underlyingAsset, contractABI, signer);
 
+    const decimals = await contract.decimals();
+    const amount = ethers.utils.parseUnits('100', decimals);
+
+    const tx = await contract.mint(amount);
+    await tx.wait();
+    console.log('Mint successful');
+    window.location.reload();
+  } catch (error) {
+    console.error('Error minting tokens', error);
+  }
+};
 export const useReserveActionState = ({
   balance,
   maxAmountToSupply,
   maxAmountToBorrow,
   reserve,
 }: ReserveActionStateProps) => {
+  const { library } = useWeb3React<ethers.providers.Web3Provider>();
   const { user, eModes } = useAppDataContext();
   const { supplyCap, borrowCap, debtCeiling } = useAssetCaps();
   const [currentMarket, currentNetworkConfig, currentChainId, currentMarketData] = useRootStore(
@@ -66,9 +118,9 @@ export const useReserveActionState = ({
             {currentNetworkConfig.isTestnet ? (
               <Warning sx={{ mb: 0 }} severity="info" icon={false}>
                 <Trans>
-                  Your {networkName} wallet is empty. Get free test {reserve.name} at
+                  Your {networkName} wallet is empty.
                 </Trans>{' '}
-                {!currentMarketData.addresses.FAUCET ? (
+                {currentMarketData.addresses.FAUCET ? (
                   <Button
                     variant="text"
                     href="https://faucet.circle.com/"
@@ -89,11 +141,12 @@ export const useReserveActionState = ({
                   <Button
                     variant="text"
                     sx={{ verticalAlign: 'top' }}
-                    onClick={() => openFaucet(reserve.underlyingAsset)}
+                    // onClick={() => openFaucet(reserve.underlyingAsset)}
+                    onClick={() => library && mintTokens(library, reserve.underlyingAsset)}
                     disableRipple
                   >
                     <Typography variant="caption">
-                      <Trans>{networkName} Faucet</Trans>
+                      <Trans> Get free test {reserve.name}</Trans>
                     </Typography>
                   </Button>
                 )}

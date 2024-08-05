@@ -159,17 +159,11 @@ export function AppHeader() {
         <Trans>Testnet mode is ON</Trans>
       </Typography>
       <Typography variant="description">
-        <Trans>The app is running in testnet mode. Learn how it works in</Trans>{' '}
-        <Link
-          href="https://docs.aave.com/faq/testing-aave"
-          style={{ fontSize: '14px', fontWeight: 400, textDecoration: 'underline' }}
-        >
-          FAQ.
-        </Link>
+        <Trans>The app is running in testnet mode. </Trans>
       </Typography>
-      <Button variant="outlined" sx={{ mt: '12px' }} onClick={disableTestnet}>
-        <Trans>Disable testnet</Trans>
-      </Button>
+      {/*<Button variant="outlined" sx={{ mt: '12px' }} onClick={disableTestnet}>*/}
+      {/*  <Trans>Disable testnet</Trans>*/}
+      {/*</Button>*/}
     </Box>
   );
 
@@ -271,56 +265,56 @@ export function AppHeader() {
 
         <Box sx={{ flexGrow: 1 }} />
 
-        <NoSsr>
-          <StyledBadge
-            invisible={visitedSwitch}
-            variant="dot"
-            badgeContent=""
-            color="secondary"
-            sx={{ mr: 2 }}
-          >
-            <Button
-              onClick={handleBridgeClick}
-              variant="surface"
-              sx={{ p: '7px 8px', minWidth: 'unset', gap: 2, alignItems: 'center' }}
-            >
-              {!smd && (
-                <Typography component="span" typography="subheader1">
-                  Bridge GHO
-                </Typography>
-              )}
-              <SvgIcon fontSize="small">
-                <SparklesIcon />
-              </SvgIcon>
-            </Button>
-          </StyledBadge>
-        </NoSsr>
+        {/*<NoSsr>*/}
+        {/*  <StyledBadge*/}
+        {/*    invisible={visitedSwitch}*/}
+        {/*    variant="dot"*/}
+        {/*    badgeContent=""*/}
+        {/*    color="secondary"*/}
+        {/*    sx={{ mr: 2 }}*/}
+        {/*  >*/}
+        {/*    <Button*/}
+        {/*      onClick={handleBridgeClick}*/}
+        {/*      variant="surface"*/}
+        {/*      sx={{ p: '7px 8px', minWidth: 'unset', gap: 2, alignItems: 'center' }}*/}
+        {/*    >*/}
+        {/*      {!smd && (*/}
+        {/*        <Typography component="span" typography="subheader1">*/}
+        {/*          Bridge GHO*/}
+        {/*        </Typography>*/}
+        {/*      )}*/}
+        {/*      <SvgIcon fontSize="small">*/}
+        {/*        <SparklesIcon />*/}
+        {/*      </SvgIcon>*/}
+        {/*    </Button>*/}
+        {/*  </StyledBadge>*/}
+        {/*</NoSsr>*/}
 
-        <NoSsr>
-          <StyledBadge
-            invisible={true}
-            variant="dot"
-            badgeContent=""
-            color="secondary"
-            sx={{ mr: 2 }}
-          >
-            <Button
-              onClick={handleSwitchClick}
-              variant="surface"
-              sx={{ p: '7px 8px', minWidth: 'unset', gap: 2, alignItems: 'center' }}
-              aria-label="Switch tool"
-            >
-              {!smd && (
-                <Typography component="span" typography="subheader1">
-                  Switch tokens
-                </Typography>
-              )}
-              <SvgIcon fontSize="small">
-                <SwitchHorizontalIcon />
-              </SvgIcon>
-            </Button>
-          </StyledBadge>
-        </NoSsr>
+        {/*<NoSsr>*/}
+        {/*  <StyledBadge*/}
+        {/*    invisible={true}*/}
+        {/*    variant="dot"*/}
+        {/*    badgeContent=""*/}
+        {/*    color="secondary"*/}
+        {/*    sx={{ mr: 2 }}*/}
+        {/*  >*/}
+        {/*    <Button*/}
+        {/*      onClick={handleSwitchClick}*/}
+        {/*      variant="surface"*/}
+        {/*      sx={{ p: '7px 8px', minWidth: 'unset', gap: 2, alignItems: 'center' }}*/}
+        {/*      aria-label="Switch tool"*/}
+        {/*    >*/}
+        {/*      {!smd && (*/}
+        {/*        <Typography component="span" typography="subheader1">*/}
+        {/*          Switch tokens*/}
+        {/*        </Typography>*/}
+        {/*      )}*/}
+        {/*      <SvgIcon fontSize="small">*/}
+        {/*        <SwitchHorizontalIcon />*/}
+        {/*      </SvgIcon>*/}
+        {/*    </Button>*/}
+        {/*  </StyledBadge>*/}
+        {/*</NoSsr>*/}
 
         {!mobileMenuOpen && (
           <WalletWidget

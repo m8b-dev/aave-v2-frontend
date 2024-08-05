@@ -71,6 +71,34 @@ export const networkConfigs: Record<string, BaseNetworkConfig> = {
     isTestnet: true,
     networkLogoPath: '/icons/networks/ethereum.svg',
   },
+  [65100003]: {
+    name: 'Autonity Piccadilly',
+    publicJsonRPCUrl: [
+      'https://rpc1.piccadilly.autonity.org/',
+    ],
+    baseUniswapAdapter: '0x0',
+    baseAssetSymbol: 'ETH',
+    wrappedBaseAssetSymbol: 'WETH',
+    baseAssetDecimals: 18,
+    explorerLink: 'https://piccadilly.autonity.org',
+    // usdMarket: true,
+    isTestnet: true,
+    networkLogoPath: '/icons/networks/autonity.svg',
+  },
+  [17000]: {
+    name: 'Ethereum Holesky',
+    publicJsonRPCUrl: [
+      'https://ethereum-holesky-rpc.publicnode.com',
+    ],
+    baseUniswapAdapter: '0x0',
+    baseAssetSymbol: 'ETH',
+    wrappedBaseAssetSymbol: 'WETH',
+    baseAssetDecimals: 18,
+    explorerLink: 'https://holesky.etherscan.io',
+    // usdMarket: true,
+    isTestnet: true,
+    networkLogoPath: '/icons/networks/ethereum.svg',
+  },
   [ChainId.goerli]: {
     name: 'Ethereum Görli',
     publicJsonRPCUrl: [
@@ -338,7 +366,7 @@ export const networkConfigs: Record<string, BaseNetworkConfig> = {
     baseAssetDecimals: 18,
     explorerLink: 'https://sepolia.scrollscan.dev',
     isTestnet: true,
-    networkLogoPath: '/icons/networks/scroll.svg',
+    networkLogoPath: '/icons/networks/autonity.svg',
   },
   [ChainId.fantom]: {
     name: 'Fantom',
@@ -442,7 +470,7 @@ export const networkConfigs: Record<string, BaseNetworkConfig> = {
     wrappedBaseAssetSymbol: 'WETH',
     baseAssetDecimals: 18,
     explorerLink: 'https://scrollscan.com/',
-    networkLogoPath: '/icons/networks/scroll.svg',
+    networkLogoPath: '/icons/networks/autonity.svg',
     bridge: {
       icon: '/icons/networks/scroll.svg',
       name: 'Scroll Bridge',

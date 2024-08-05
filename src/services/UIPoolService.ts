@@ -36,7 +36,8 @@ export class UiPoolService {
     if (
       !marketData.v3 ||
       marketData.marketTitle === 'Fantom' ||
-      marketData.marketTitle === 'Harmony'
+      marketData.marketTitle === 'Harmony' ||
+      marketData.marketTitle === 'Piccadilly'
     ) {
       // it's a v2 market, or it does not have v3.1 upgrade
       return true;

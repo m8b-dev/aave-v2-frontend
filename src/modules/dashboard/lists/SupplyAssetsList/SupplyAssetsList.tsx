@@ -65,9 +65,7 @@ export const SupplyAssetsList = () => {
   const { bridge, isTestnet, baseAssetSymbol, name: networkName } = currentNetworkConfig;
 
   const localStorageName = 'showSupplyZeroAssets';
-  const [isShowZeroAssets, setIsShowZeroAssets] = useState(
-    localStorage.getItem(localStorageName) === 'true'
-  );
+  const [isShowZeroAssets, setIsShowZeroAssets] = useState(true);
 
   const tokensToSupply = reserves
     .filter(
@@ -270,13 +268,13 @@ export const SupplyAssetsList = () => {
               </Warning>
             ) : (
               filteredSupplyReserves.length === 0 &&
-              (isTestnet ? (
-                <Warning severity="info">
-                  <Trans>Your {networkName} wallet is empty. Get free test assets at </Trans>{' '}
-                  <Link href={ROUTES.faucet} style={{ fontWeight: 400 }}>
-                    <Trans>{networkName} Faucet</Trans>
-                  </Link>
-                </Warning>
+              (isTestnet ? ( ''
+                // <Warning severity="info">
+                //   <Trans>Your {networkName} wallet is empty. Get free test assets at </Trans>{' '}
+                //   <Link href={ROUTES.faucet} style={{ fontWeight: 400 }}>
+                //     <Trans>{networkName} Faucet</Trans>
+                //   </Link>
+                // </Warning>
               ) : (
                 <WalletEmptyInfo name={networkName} bridge={bridge} chainId={currentChainId} />
               ))

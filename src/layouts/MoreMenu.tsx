@@ -61,11 +61,11 @@ export function MoreMenu() {
         onClose={handleClose}
         keepMounted={true}
       >
-        <MenuItem divider={true} component={Link} onClick={handleClose} href="/v3-migration">
-          <Typography variant="subheader1">
-            <Trans>Migrate to Aave V3</Trans>
-          </Typography>
-        </MenuItem>
+        {/*<MenuItem divider={true} component={Link} onClick={handleClose} href="/v3-migration">*/}
+        {/*  <Typography variant="subheader1">*/}
+        {/*    <Trans>Migrate to Aave V3</Trans>*/}
+        {/*  </Typography>*/}
+        {/*</MenuItem>*/}
         {moreNavigation.map((item, index) => (
           <MenuItem
             component={Link}
