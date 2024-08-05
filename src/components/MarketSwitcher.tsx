@@ -225,19 +225,19 @@ export const MarketSwitcher = () => {
           },
           '.MuiSelect-icon': { color: '#F1F1F3' },
         },
-        MenuProps: {
-          anchorOrigin: {
-            vertical: 'bottom',
-            horizontal: 'right',
-          },
-          PaperProps: {
-            style: {
-              minWidth: 240,
-            },
-            variant: 'outlined',
-            elevation: 0,
-          },
-        },
+        // MenuProps: {
+        //   anchorOrigin: {
+        //     vertical: 'bottom',
+        //     horizontal: 'right',
+        //   },
+        //   PaperProps: {
+        //     style: {
+        //       minWidth: 240,
+        //     },
+        //     variant: 'outlined',
+        //     elevation: 0,
+        //   },
+        // },
       }}
     >
       {/*<Box>*/}

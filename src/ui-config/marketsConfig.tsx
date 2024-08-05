@@ -310,7 +310,7 @@ export const marketsData: {
   //   },
   // },
   [CustomMarket.piccadilly]: {
-    marketTitle: 'Piccadilly',
+    marketTitle: 'Autonity Piccadilly',
     market: CustomMarket.piccadilly,
     chainId: 65100003,
     // enabledFeatures: {
