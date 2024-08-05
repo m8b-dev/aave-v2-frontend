@@ -1,10 +1,10 @@
-import { ChevronDownIcon } from '@heroicons/react/outline';
-import { Trans } from '@lingui/macro';
+// import { ChevronDownIcon } from '@heroicons/react/outline';
+// import { Trans } from '@lingui/macro';
 import {
   Box,
   BoxProps,
-  ListItemText,
-  MenuItem,
+  // ListItemText,
+  // MenuItem,
   SvgIcon,
   TextField,
   Tooltip,
@@ -12,23 +12,23 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import React, { useState } from 'react';
+import React from 'react';
 import { useRootStore } from 'src/store/root';
 import { BaseNetworkConfig } from 'src/ui-config/networksConfig';
 import { DASHBOARD } from 'src/utils/mixPanelEvents';
 
 import { useProtocolDataContext } from '../hooks/useProtocolDataContext';
 import {
-  availableMarkets,
+  // availableMarkets,
   CustomMarket,
-  ENABLE_TESTNET,
+  // ENABLE_TESTNET,
   MarketDataType,
   marketsData,
   networkConfigs,
-  STAGING_ENV,
+  // STAGING_ENV,
 } from '../utils/marketsAndNetworksConfig';
-import StyledToggleButton from './StyledToggleButton';
-import StyledToggleButtonGroup from './StyledToggleButtonGroup';
+// import StyledToggleButton from './StyledToggleButton';
+// import StyledToggleButtonGroup from './StyledToggleButtonGroup';
 
 export const MULTIPLE_MARKET_OPTIONS = [
   CustomMarket.proto_mainnet_v3,
@@ -118,28 +118,28 @@ export const MarketLogo = ({ size, logo, testChainName, sx }: MarketLogoProps) =
   );
 };
 
-enum SelectedMarketVersion {
-  V2,
-  V3,
-}
+// enum SelectedMarketVersion {
+//   V2,
+//   V3,
+// }
 
 export const MarketSwitcher = () => {
   const { currentMarket, setCurrentMarket } = useProtocolDataContext();
-  const [selectedMarketVersion, setSelectedMarketVersion] = useState<SelectedMarketVersion>(
-    SelectedMarketVersion.V3
-  );
+  // const [selectedMarketVersion, setSelectedMarketVersion] = useState<SelectedMarketVersion>(
+  //   SelectedMarketVersion.V3
+  // );
   const theme = useTheme();
   const upToLG = useMediaQuery(theme.breakpoints.up('lg'));
   const downToXSM = useMediaQuery(theme.breakpoints.down('xsm'));
   const trackEvent = useRootStore((store) => store.trackEvent);
 
-  const isV3MarketsAvailable = availableMarkets
-    .map((marketId: CustomMarket) => {
-      const { market } = getMarketInfoById(marketId);
-
-      return market.v3;
-    })
-    .some((item) => !!item);
+  // const isV3MarketsAvailable = availableMarkets
+  //   .map((marketId: CustomMarket) => {
+  //     const { market } = getMarketInfoById(marketId);
+  //
+  //     return market.v3;
+  //   })
+  //   .some((item) => !!item);
 
   const handleMarketSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     trackEvent(DASHBOARD.CHANGE_MARKET, { market: e.target.value });

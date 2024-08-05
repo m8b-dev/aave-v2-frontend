@@ -132,7 +132,7 @@ export const networkConfigs: Record<string, BaseNetworkConfig> = {
     baseAssetDecimals: 18,
     explorerLink: 'https://etherscan.io',
     ratesHistoryApiUrl,
-    networkLogoPath: '/icons/networks/ethereum.svg',
+    networkLogoPath: '/icons/networks/autonity.svg',
   },
   [ChainId.polygon]: {
     name: 'Polygon POS',
