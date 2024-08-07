@@ -27,7 +27,7 @@ const FOOTER_ICONS = [
     title: 'Lens',
   },
   {
-    href: 'https://discord.gg/QsSRbRSWtE',
+    href: 'https://discord.com/invite/QsSRbRSWtE',
     icon: <DiscordIcon />,
     title: 'Discord',
   },
@@ -66,7 +66,7 @@ export function AppFooter() {
       key: 'FAQS',
     },
     {
-      href: 'https://discord.gg/QsSRbRSWtE',
+      href: ' https://discord.com/invite/QsSRbRSWtE',
       label: <Trans>Send feedback</Trans>,
       key: 'Send feedback',
       onClick: (event: React.MouseEvent) => {
