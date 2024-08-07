@@ -71,7 +71,7 @@ export function AppFooter() {
       key: 'FAQS',
     },
     {
-      href: 'https://discord.com/invite/aave',
+      href: ' https://discord.gg/QsSRbRSWtE',
       label: <Trans>Send feedback</Trans>,
       key: 'Send feedback',
       onClick: (event: React.MouseEvent) => {
