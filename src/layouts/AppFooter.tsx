@@ -22,11 +22,6 @@ const StyledLink = styled(Link)<StyledLinkProps>(({ theme }) => ({
 
 const FOOTER_ICONS = [
   {
-    href: 'https://hey.xyz/u/aave',
-    icon: <LensLogoIcon />,
-    title: 'Aave',
-  },
-  {
     href: 'https://twitter.com/intermutualapp',
     icon: <Twitter />,
     title: 'Lens',
@@ -71,7 +66,7 @@ export function AppFooter() {
       key: 'FAQS',
     },
     {
-      href: ' https://discord.gg/QsSRbRSWtE',
+      href: 'https://discord.gg/QsSRbRSWtE',
       label: <Trans>Send feedback</Trans>,
       key: 'Send feedback',
       onClick: (event: React.MouseEvent) => {
