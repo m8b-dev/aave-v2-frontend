@@ -25,7 +25,7 @@ export function MainLayout({ children }: { children: ReactNode }) {
         {children}
       </Box>
 
-      {/*<AppFooter />*/}
+      <AppFooter />
       <FeedbackModal />
       {FORK_ENABLED ? null : <AnalyticsConsent />}
     </>
