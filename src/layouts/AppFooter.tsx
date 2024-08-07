@@ -27,17 +27,17 @@ const FOOTER_ICONS = [
     title: 'Aave',
   },
   {
-    href: 'https://twitter.com/aave',
+    href: 'https://twitter.com/intermutualapp',
     icon: <Twitter />,
     title: 'Lens',
   },
   {
-    href: 'https://discord.com/invite/aave',
+    href: 'https://discord.gg/QsSRbRSWtE',
     icon: <DiscordIcon />,
     title: 'Discord',
   },
   {
-    href: 'https://github.com/aave',
+    href: 'https://github.com/m8b-dev/aave-v2-frontend',
     icon: <GitHub />,
     title: 'Github',
   },
