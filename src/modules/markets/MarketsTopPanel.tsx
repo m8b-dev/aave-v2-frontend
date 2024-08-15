@@ -120,7 +120,14 @@ export const MarketsTopPanel = () => {
                       display: { xs: 'none', sm: 'inline' },
                     }}
                   >
-                    <Trans>Ethereum Main</Trans>
+                    {/* This change is included for Autonity Testnet, but shall be addressed later on with better approach */}
+                    if (currentChainId === 65100003) {
+                      <span>Autonity Test</span>
+                    }
+
+                    if (currentChainId !== 65100003) {
+                      <Trans>Autonity Main</Trans>
+                    }
                   </Box>
                   <Box
                     component="span"

@@ -12686,6 +12686,25 @@ export const TOKEN_LIST: TokenList = {
         },
       },
     },
+    // Autonity Testnet
+    {
+      name: 'tUSDC',
+      address: '0x142bC972D3Cff183a5179509A05E0E53ee1308eb',
+      symbol: 'tUSDC',
+      decimals: 6,
+      chainId: 65100003,
+      logoURI:
+        'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png',
+    },
+    {
+      name: 'Newton (NTN)',
+      address: '0xBd770416a3345F91E4B34576cb804a576fa48EB1',
+      symbol: 'NTN',
+      decimals: 18,
+      chainId: 65100003,
+      logoURI:
+        'https://raw.githubusercontent.com/m8b-dev/aave-v2-frontend/piccadilly-v2-preview/public/icons/networks/autonity.svg',
+    },
     {
       name: 'Uniswap',
       address: '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984',
