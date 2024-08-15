@@ -52,6 +52,7 @@ const FORK_WS_RPC_URL =
  */
 export const networkConfigs = Object.keys(_networkConfigs).reduce((acc, value) => {
   acc[value] = _networkConfigs[value];
+  console.log("Network configs chain ID, acc[value], value", acc[value], value);
   if (FORK_ENABLED && Number(value) === FORK_BASE_CHAIN_ID) {
     acc[FORK_CHAIN_ID] = {
       ..._networkConfigs[value],

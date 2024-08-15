@@ -99,6 +99,19 @@ const NETWORK_ASSETS: TokenInfo[] = [
       isNative: true,
     },
   },
+  // NOTE TESTNET Piccadilly ATN (AUTON) NATIVE TOKEN
+  {
+    name: 'AUTON',
+    symbol: 'ATN',
+    decimals: 18,
+    address: API_ETH_MOCK_ADDRESS,
+    chainId: 65100003, // Piccadilly
+    logoURI:
+      'https://raw.githubusercontent.com/m8b-dev/aave-v2-frontend/piccadilly-v2-preview/public/icons/networks/autonity.svg',
+    extensions: {
+      isNative: true,
+    },
+  },
   {
     name: 'Ethereum',
     symbol: 'ETH',

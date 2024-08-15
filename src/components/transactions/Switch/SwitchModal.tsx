@@ -35,6 +35,7 @@ const getFilteredTokens = (chainId: number): TokenInfoWithBalance[] => {
     return { ...token, balance: '0' };
   });
   const realChainId = getNetworkConfig(chainId).underlyingChainId ?? chainId;
+  console.log("this is a chain ID", chainId, realChainId);
   return transformedTokens.filter((token) => token.chainId === realChainId);
 };
 

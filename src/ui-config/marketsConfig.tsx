@@ -116,7 +116,7 @@ export const marketsData: {
   [CustomMarket.proto_mainnet_v3]: {
     marketTitle: 'Autonity',
     market: CustomMarket.proto_mainnet_v3,
-    chainId: ChainId.mainnet,
+    chainId: 65100003,
     v3: true,
     enabledFeatures: {
       governance: true,
