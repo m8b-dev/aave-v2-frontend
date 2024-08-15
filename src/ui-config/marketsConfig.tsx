@@ -113,11 +113,11 @@ const apiKey = process.env.NEXT_PUBLIC_SUBGRAPH_API_KEY;
 export const marketsData: {
   [key in keyof typeof CustomMarket]: MarketDataType;
 } = {
-  [CustomMarket.proto_mainnet_v3]: {
-    marketTitle: 'Autonity',
-    market: CustomMarket.proto_mainnet_v3,
+  [CustomMarket.piccadilly]: {
+    marketTitle: 'Autonity Piccadilly',
+    market: CustomMarket.piccadilly,
     chainId: 65100003,
-    v3: true,
+    v3: false,
     enabledFeatures: {
       governance: true,
       staking: true,
@@ -130,9 +130,9 @@ export const marketsData: {
     },
     subgraphUrl: `https://gateway-arbitrum.network.thegraph.com/api/${apiKey}/subgraphs/id/Cd2gEDVeqnjBn1hSeqFMitw8Q1iiyV9FYUZkLNRcL87g`,
     addresses: {
-      LENDING_POOL_ADDRESS_PROVIDER: AaveV3Ethereum.POOL_ADDRESSES_PROVIDER,
-      LENDING_POOL: AaveV3Ethereum.POOL,
-      WETH_GATEWAY: AaveV3Ethereum.WETH_GATEWAY,
+      LENDING_POOL_ADDRESS_PROVIDER: "0xA85847c2A1d8143A878afac8D7FF7E8aFAF92e4c",
+      LENDING_POOL: "0x228249Fe613c28C3962ECD0a0E3fC2CEF8D0D9c3",
+      WETH_GATEWAY: "0xB9C8bAac1c109024E1AE0BFf0f4EE7cdc6027B82 ",
       REPAY_WITH_COLLATERAL_ADAPTER: AaveV3Ethereum.REPAY_WITH_COLLATERAL_ADAPTER,
       SWAP_COLLATERAL_ADAPTER: AaveV3Ethereum.SWAP_COLLATERAL_ADAPTER,
       WALLET_BALANCE_PROVIDER: AaveV3Ethereum.WALLET_BALANCE_PROVIDER,
@@ -309,26 +309,6 @@ export const marketsData: {
   //     UI_INCENTIVE_DATA_PROVIDER: AaveV2Fuji.UI_INCENTIVE_DATA_PROVIDER,
   //   },
   // },
-  [CustomMarket.piccadilly]: {
-    marketTitle: 'Autonity Piccadilly',
-    market: CustomMarket.piccadilly,
-    chainId: 65100003,
-    // enabledFeatures: {
-    //   liquiditySwap: true,
-    //   incentives: true,
-    //   collateralRepay: true,
-    //   debtSwitch: true,
-    //   switch: true,
-    // },
-    enabledFeatures: {
-      governance: true,
-      staking: true,
-      liquiditySwap: true,
-      collateralRepay: true,
-      incentives: true,
-      debtSwitch: true,
-      switch: true,
-    },
     // subgraphUrl: `https://gateway-arbitrum.network.thegraph.com/api/${apiKey}/subgraphs/id/EZvK18pMhwiCjxwesRLTg81fP33WnR6BnZe5Cvma3H1C`,
     addresses: {
       LENDING_POOL_ADDRESS_PROVIDER: "0xF067372aC6f13A937b943a8cdA446D836fD67D02",

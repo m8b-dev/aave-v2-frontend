@@ -121,13 +121,7 @@ export const MarketsTopPanel = () => {
                     }}
                   >
                     {/* This change is included for Autonity Testnet, but shall be addressed later on with better approach */}
-                    if (currentChainId === 65100003) {
-                      <span>Autonity Test</span>
-                    }
-
-                    if (currentChainId !== 65100003) {
-                      <Trans>Autonity Main</Trans>
-                    }
+                    <span>Autonity Test</span>
                   </Box>
                   <Box
                     component="span"
