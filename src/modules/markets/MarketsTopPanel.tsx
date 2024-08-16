@@ -120,7 +120,8 @@ export const MarketsTopPanel = () => {
                       display: { xs: 'none', sm: 'inline' },
                     }}
                   >
-                    <Trans>Ethereum Main</Trans>
+                    {/* This change is included for Autonity Testnet, but shall be addressed later on with better approach */}
+                    <span>Autonity Test</span>
                   </Box>
                   <Box
                     component="span"

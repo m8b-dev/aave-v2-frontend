@@ -4,6 +4,7 @@ import {
   UiPoolDataProvider,
   UserReserveDataHumanized,
 } from '@aave/contract-helpers';
+import { ReserveDataHumanized } from '@aave/contract-helpers/src/v3-UiPoolDataProvider-contract/types';
 import { Provider } from '@ethersproject/providers';
 import { MarketDataType } from 'src/ui-config/marketsConfig';
 
@@ -48,9 +49,22 @@ export class UiPoolService {
 
   async getReservesHumanized(marketData: MarketDataType): Promise<ReservesDataHumanized> {
     const uiPoolDataProvider = await this.getUiPoolDataService(marketData);
-    return uiPoolDataProvider.getReservesHumanized({
+    const reservesHumanized = await uiPoolDataProvider.getReservesHumanized({
       lendingPoolAddressProvider: marketData.addresses.LENDING_POOL_ADDRESS_PROVIDER,
     });
+    const reservesData: ReserveDataHumanized[] = [];
+    // Dirty way to display only USDC
+    reservesHumanized.reservesData.forEach((key) => {
+      if ('USDC' === key.name) {
+        key.name = 'tUSDC';
+        reservesData.push(key);
+      }
+    });
+    if ('piccadilly' === marketData.market) {
+      reservesHumanized.reservesData = reservesData;
+    }
+
+    return reservesHumanized;
   }
 
   async getUserReservesHumanized(
