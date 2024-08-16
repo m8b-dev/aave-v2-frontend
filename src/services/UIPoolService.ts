@@ -56,6 +56,7 @@ export class UiPoolService {
     // Dirty way to display only USDC
     reservesHumanized.reservesData.forEach((key) => {
       if ('USDC' === key.name) {
+        key.name = 'tUSDC';
         reservesData.push(key);
       }
     });
